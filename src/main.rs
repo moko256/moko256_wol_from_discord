@@ -36,7 +36,7 @@ static MAGIC_PACKET: Lazy<[u8; 102]> = Lazy::new(|| {
 });
 
 async fn post_wol() -> io::Result<()> {
-    let sock = UdpSocket::bind("0.0.0.0:7").await?;
+    let sock = UdpSocket::bind("127.0.0.1:0").await?;
     sock.set_broadcast(true)?;
     sock.connect("192.168.0.255:7").await?;
 
