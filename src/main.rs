@@ -79,7 +79,7 @@ impl EventHandler for Handler {
                 if init_command.data.name == "wol" {
                     ChannelId(config::DISCORD_BUTTON_CHID)
                         .send_message(ctx.http, |m| {
-                            m.content("Send WoL to CITRINE");
+                            m.content("Launch PC button");
                             m.components(|c| {
                                 c.create_action_row(|r| {
                                     r.create_button(|b| {
